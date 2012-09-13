@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="rowCount">2</integer>
+    <integer name="columnCount">1</integer>
+    <integer name="fontSelectorRowCount">1</integer>
+    <integer name="fontSelectorColumnCount">6</integer>
+</resources>

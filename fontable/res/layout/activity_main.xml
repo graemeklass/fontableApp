@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    >
+<ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+		        
+		        <ImageButton
+		            android:id="@+id/btnShare"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_gravity="right"
+		            android:layout_margin="@dimen/btnShareMargin"
+		            android:contentDescription="@string/btnShareDescription"
+		            android:scaleType="center"
+		            android:src="@drawable/ic_action_share" />
+		
+		        <EditText
+		            android:id="@+id/txtStatusIn"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:ems="10"
+		            android:hint="@string/hintStatusInHint"
+		            android:inputType="textMultiLine"
+		           
+		             />
+		        
+<!-- 		         <EditText -->
+<!-- 		            android:id="@+id/txtStatusIn" -->
+<!-- 		            android:layout_width="match_parent" -->
+<!-- 		            android:layout_height="wrap_content" -->
+<!-- 		            android:ems="10" -->
+<!-- 		            android:hint="@string/hintStatusInHint" -->
+<!-- 		            /> -->
+		
+		        <com.klassicapps.fontable.AutoResizeTextView
+		            android:id="@+id/txtStatusOut"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent"
+		            android:layout_gravity="center_vertical|center_horizontal"
+		            android:background="@drawable/back"
+		            android:padding="@dimen/statusOutSize"
+		            android:gravity="center"
+		            android:textSize="@dimen/statusOutSize" />
+		        
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btnFont1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font1"
+                    android:typeface="normal" />
+
+                <Button
+                    android:id="@+id/btnFont2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font2" />
+
+                <Button
+                    android:id="@+id/btnFont3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font3" />
+
+                <Button
+                    android:id="@+id/btnFont4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font4" />
+
+                <Button
+                    android:id="@+id/btnFont5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font5" />
+
+                <Button
+                    android:id="@+id/btnFont6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font6" />
+
+                <Button
+                    android:id="@+id/btnFont7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font7" />
+                
+                <Button
+                    android:id="@+id/btnFont8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font8" />
+                
+                <Button
+                    android:id="@+id/btnFont9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font9" />
+                
+                <Button
+                    android:id="@+id/btnFont10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font10" />
+            </LinearLayout>
+        </HorizontalScrollView>
+	</LinearLayout>
+</ScrollView>
+    
+</LinearLayout>

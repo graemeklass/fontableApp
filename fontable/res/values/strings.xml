@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="app_name">fontable</string>
+  	 <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">fontable</string>
+    <string name="font1">tusj</string>
+    <string name="font2">oregano</string>
+    <string name="font3">coder</string>
+    <string name="font4">muse</string>
+    <string name="font5">impact</string>
+    <string name="font6">100dollar</string>
+    <string name="font7">1776</string>
+    <string name="font8">massimo</string>
+    <string name="font9">carbon</string>
+    <string name="font10">thumper</string>
+    
+    <string name="hintStatusInHint">type here</string>
+    <string name="btnShareDescription">share</string>
+    <string name="geotag">GeoTag</string>
+    <string name="settings_text_view">settings</string>
+    <string name="appDescription">beautify your status</string>
+
+</resources>
