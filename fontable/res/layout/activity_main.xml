@@ -37,25 +37,7 @@
 		           
 		             />
 		        
-<!-- 		         <EditText -->
-<!-- 		            android:id="@+id/txtStatusIn" -->
-<!-- 		            android:layout_width="match_parent" -->
-<!-- 		            android:layout_height="wrap_content" -->
-<!-- 		            android:ems="10" -->
-<!-- 		            android:hint="@string/hintStatusInHint" -->
-<!-- 		            /> -->
-		
-		        <com.klassicapps.fontable.AutoResizeTextView
-		            android:id="@+id/txtStatusOut"
-		            android:layout_width="fill_parent"
-		            android:layout_height="fill_parent"
-		            android:layout_gravity="center_vertical|center_horizontal"
-		            android:background="@drawable/back"
-		            android:padding="@dimen/statusOutSize"
-		            android:gravity="center"
-		            android:textSize="@dimen/statusOutSize" />
-		        
-        <HorizontalScrollView
+		         <HorizontalScrollView
             android:id="@+id/horizontalScrollView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
@@ -127,6 +109,30 @@
                     android:text="@string/font10" />
             </LinearLayout>
         </HorizontalScrollView>
+		        
+<!-- 		         <EditText -->
+<!-- 		            android:id="@+id/txtStatusIn" -->
+<!-- 		            android:layout_width="match_parent" -->
+<!-- 		            android:layout_height="wrap_content" -->
+<!-- 		            android:ems="10" -->
+<!-- 		            android:hint="@string/hintStatusInHint" -->
+<!-- 		            /> -->
+	<ViewGroup
+	    android:id="@+id/viewArea"
+                    
+	    >
+	    
+	        <com.klassicapps.fontable.AutoResizeTextView
+		            android:id="@+id/txtStatusOut"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent"
+		            android:layout_gravity="center_vertical|center_horizontal"
+		            android:background="@drawable/back"
+		            android:padding="@dimen/statusOutSize"
+		            android:gravity="center"
+		            android:textSize="@dimen/statusOutSize" />
+		
+       </ViewGroup>
 	</LinearLayout>
 </ScrollView>
     

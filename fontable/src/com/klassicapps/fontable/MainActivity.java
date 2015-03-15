@@ -36,9 +36,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -55,13 +58,25 @@ public class MainActivity extends Activity {
 	 Location location;
 	 String provider;
 	 Typeface[] fontArray = new Typeface[10];
-	 
+	 private int _xDelta;
+	 private int _yDelta;
+	 ViewGroup _root;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
         setContentView(R.layout.activity_main);
+        
+        _root = (ViewGroup)findViewById(R.id.viewArea);
+        txtStatusOut = (AutoResizeTextView)findViewById(R.id.txtStatusOut);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(150, 50);
+        layoutParams.leftMargin = 50;
+        layoutParams.topMargin = 50;
+        layoutParams.bottomMargin = -250;
+        layoutParams.rightMargin = -250;
+        txtStatusOut.setLayoutParams(layoutParams);
+               
         
         setTitle("");
         
@@ -144,7 +159,7 @@ public class MainActivity extends Activity {
     	txtStatusIn = (EditText)findViewById(R.id.txtStatusIn);
     	//txtStatusIn.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
     	
-    	txtStatusOut = (AutoResizeTextView)findViewById(R.id.txtStatusOut);
+    	
     	txtStatusOut.setTypeface(fontArray[0]); 
     	
     	txtStatusIn.addTextChangedListener(handlerTextChanged);
@@ -158,7 +173,7 @@ public class MainActivity extends Activity {
     		 @Override
     		    public boolean onTouch(View v, MotionEvent event) {
     		        TextView tv = (TextView) v.findViewById(R.id.txtStatusOut);
-    		        if (event.getPointerCount() == 2) {
+    		       /* if (event.getPointerCount() == 2) {
     		 		   int action = event.getAction();
     		 		   int pureaction = action & MotionEvent.ACTION_MASK;
     		 		   if (pureaction == MotionEvent.ACTION_POINTER_DOWN) {
@@ -173,14 +188,44 @@ public class MainActivity extends Activity {
     		 		   
     		 		   }
     		 		  }
+    		        
+    		        else if (event.getActionMasked() == MotionEvent.ACTION_MOVE )
+    		        {*/
+    		        	final int X = (int) event.getRawX();
+    		            final int Y = (int) event.getRawY();
+    		            switch (event.getAction() & MotionEvent.ACTION_MASK) {
+    		                case MotionEvent.ACTION_DOWN:
+    		                    RelativeLayout.LayoutParams lParams = (RelativeLayout.LayoutParams) v.getLayoutParams();
+    		                    _xDelta = X - lParams.leftMargin;
+    		                    _yDelta = Y - lParams.topMargin;
+    		                    break;
+    		                case MotionEvent.ACTION_UP:
+    		                    break;
+    		                case MotionEvent.ACTION_POINTER_DOWN:
+    		                    break;
+    		                case MotionEvent.ACTION_POINTER_UP:
+    		                    break;
+    		                case MotionEvent.ACTION_MOVE:
+    		                	RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) v.getLayoutParams();
+    		                    layoutParams.leftMargin = X - _xDelta;
+    		                    layoutParams.topMargin = Y - _yDelta;
+    		                   
+    		                    v.setLayoutParams(layoutParams);
+    		                    
+    		                
+    		                    break;
+    		            //}
+    		        }
     		 		  return true; 
-    		 		 }
+    		 		 } 
+    		 
+    		 		
 
     		 		 int getDistance(MotionEvent event) {
     		 		  int dx = (int)(event.getX(0) - event.getX(1));
     		 		  int dy = (int)(event.getY(0) - event.getY(1));
     		 		  return (int)(Math.sqrt(dx * dx + dy * dy));
-    		 		 }
+    		 		 }	
     	});
     	
     	//let's find out whether height or width is bigger and set the other to that height to make square
